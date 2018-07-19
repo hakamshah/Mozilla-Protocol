@@ -1,9 +1,10 @@
 ---
 name: Download button
 description: |
-  A product download button theme.
+  A product download button theme, with additional compact and hollow variations.
 tips: |
-  - Use this theme for Firefox downloads CTA's.
+  - Use this theme style for Firefox download buttons.
+  - The `mzp-c-button-compact-hollow` variation is used as a secondary download button style in the [Navigation](/patterns/organisms/navigation.html) organism.
 ---
 
 <button class="mzp-c-button mzp-t-download">
@@ -13,6 +14,30 @@ tips: |
 </button>
 
 <a href="#" class="mzp-c-button mzp-t-download">
+{{#block "content"}}
+  Call to Action
+{{/block}}
+</a>
+
+<button class="mzp-c-button mzp-c-button-compact mzp-t-download">
+{{#block "content"}}
+  Call to Action
+{{/block}}
+</button>
+
+<a href="#" class="mzp-c-button mzp-c-button-compact mzp-t-download">
+{{#block "content"}}
+  Call to Action
+{{/block}}
+</a>
+
+<button class="mzp-c-button mzp-c-button-compact-hollow mzp-t-download">
+{{#block "content"}}
+  Call to Action
+{{/block}}
+</button>
+
+<a href="#" class="mzp-c-button mzp-c-button-compact-hollow mzp-t-download">
 {{#block "content"}}
   Call to Action
 {{/block}}
