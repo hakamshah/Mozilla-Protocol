@@ -13,6 +13,8 @@ if (typeof Mozilla === 'undefined') {
     var Menu = {};
     var _hoverTimeout;
     var _mqWideNav;
+    var _wideBreakpoint = '768px';
+
     var _options = {
         onMenuOpen: null,
         onMenuClose: null,
@@ -123,7 +125,7 @@ if (typeof Mozilla === 'undefined') {
     };
 
     Menu.handleState = function() {
-        _mqWideNav = matchMedia('(min-width: 768px)');
+        _mqWideNav = matchMedia('(min-width: ' + _wideBreakpoint + ')');
 
         _mqWideNav.addListener(function(mq) {
             Menu.close();
@@ -145,7 +147,7 @@ if (typeof Mozilla === 'undefined') {
     };
 
     Menu.bindEventsWide = function() {
-        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-has-drop-down');
+        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-js-expandable');
         var link;
         var close;
 
@@ -163,7 +165,7 @@ if (typeof Mozilla === 'undefined') {
     };
 
     Menu.unbindEventsWide = function() {
-        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-has-drop-down');
+        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-js-expandable');
         var link;
         var close;
 
@@ -181,7 +183,7 @@ if (typeof Mozilla === 'undefined') {
     };
 
     Menu.bindEventsSmall = function() {
-        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-has-drop-down .mzp-c-menu-title');
+        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-js-expandable .mzp-c-menu-title');
 
         for (var i = 0; i < items.length; i++) {
             items[i].addEventListener('click', Menu.onClickSmall, false);
@@ -189,7 +191,7 @@ if (typeof Mozilla === 'undefined') {
     };
 
     Menu.unbindEventsSmall = function() {
-        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-has-drop-down .mzp-c-menu-title');
+        var items = document.querySelectorAll('.mzp-c-menu-category.mzp-js-expandable .mzp-c-menu-title');
 
         for (var i = 0; i < items.length; i++) {
             items[i].removeEventListener('click', Menu.onClickSmall, false);

@@ -66,6 +66,7 @@ $icon-size: 24px;
 
         li {
             margin-bottom: $spacing-md;
+            word-wrap: break-word;
         }
 
         a:link,
@@ -87,7 +88,10 @@ $icon-size: 24px;
                 width: calc(50% - #{$spacing-sm});
 
                 &:nth-child(odd) {
-                    @include bidi(((padding-right, $spacing-sm, padding-left, 0),));
+                    @include bidi((
+                        (clear, left, right),
+                        (padding-right, $spacing-sm, padding-left, 0),
+                    ));
                 }
 
                 &:nth-child(even) {
